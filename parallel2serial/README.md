@@ -109,7 +109,7 @@ Note
 - To perform the whole serialization **DATA_WIDTH + 1** rising edges of **shift** signal are needed.
 - The **start_ser** and **finish_ser** signals go low and high, respectively, when the last bit has been serialized and this happens at (**DATA_WIDTH + 1**)-th rising edge of **shift** (see **Fig. 4**).
 - **finish_ser** stays high until when **enable**.
-- Thre is no a reset signal and a falling edge of **enable** does not reset the state of the serializazion (freezes it only). In fact if there is a high2low and a low2high activity over the **enable** signal during a setialization, it goes to ends anyway (see **Fig. 2**).
+- Thre **enable** signal acts as a reset: it resets the state of the serializazion. In fact if there is a high2low and a low2high activity over the **enable** signal during a setialization, it restarts and goes to ends anyway (see **Fig. 2**).
 
 <br/>
 
