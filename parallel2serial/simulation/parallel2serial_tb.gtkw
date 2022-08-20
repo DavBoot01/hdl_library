@@ -1,0 +1,54 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sun Jul  3 16:19:47 2022
+[*]
+[dumpfile] "parallel2serial_tb.vcd"
+[dumpfile_mtime] "Sun Jul  3 16:15:53 2022"
+[dumpfile_size] 4911
+[savefile] "parallel2serial_tb.gtkw"
+[timestart] 0
+[size] 2560 1362
+[pos] -1 -1
+*-46.000000 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] parallel2serial_tb.
+[sst_width] 207
+[signals_width] 333
+[sst_expanded] 1
+[sst_vpaned_height] 420
+@200
+-Control Signals
+@28
+[color] 7
+parallel2serial_tb.enable
+parallel2serial_tb.shift
+@200
+-Data I/O
+@22
+parallel2serial_tb.uut.data_in[7:0]
+@28
+[color] 7
+parallel2serial_tb.start_ser
+[color] 7
+parallel2serial_tb.finish_ser
+@29
+[color] 3
+parallel2serial_tb.d_out
+@200
+-UUT Internal Signals
+@22
+parallel2serial_tb.uut.data_in[7:0]
+parallel2serial_tb.uut.d_in[7:0]
+@28
+parallel2serial_tb.uut.data_out
+parallel2serial_tb.uut.enable
+parallel2serial_tb.uut.shift
+@420
+[color] 2
+parallel2serial_tb.uut.cnt
+@28
+parallel2serial_tb.uut.dstartser
+parallel2serial_tb.uut.start
+parallel2serial_tb.uut.done
+parallel2serial_tb.uut.dfinishser
+[pattern_trace] 1
+[pattern_trace] 0
