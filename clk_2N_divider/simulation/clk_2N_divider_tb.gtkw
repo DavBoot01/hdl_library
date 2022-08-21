@@ -1,0 +1,43 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sun Aug 21 16:03:57 2022
+[*]
+[dumpfile] "/home/davide/hdl_library/clk_2N_divider/simulation/clk_2N_divider_tb.vcd"
+[dumpfile_mtime] "Sun Aug 21 16:02:10 2022"
+[dumpfile_size] 5547
+[savefile] "/home/davide/hdl_library/clk_2N_divider/simulation/clk_2N_divider_tb.gtkw"
+[timestart] 0
+[size] 2560 1406
+[pos] -2561 -1
+*-46.000000 60000000000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] clk_2n_divider_tb.
+[sst_width] 207
+[signals_width] 341
+[sst_expanded] 1
+[sst_vpaned_height] 435
+@200
+-Control Signals
+@28
+[color] 1
+clk_2n_divider_tb.nreset
+@22
+[color] 1
+clk_2n_divider_tb.n_scale[15:0]
+@200
+-Data I/O
+@28
+[color] 2
+clk_2n_divider_tb.clk_in
+[color] 2
+clk_2n_divider_tb.clk_out
+@200
+-UUT Internal Signals
+@28
+clk_2n_divider_tb.uut.nreset
+clk_2n_divider_tb.uut.clk_in
+clk_2n_divider_tb.uut.clk_out
+@23
+[color] 2
+clk_2n_divider_tb.uut.counter[15:0]
+[pattern_trace] 1
+[pattern_trace] 0

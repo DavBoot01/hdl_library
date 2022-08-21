@@ -5,6 +5,7 @@
 PROJECT_LIST= \
 parallel2serial \
 serial2parallel \
+clk_2N_divider \
 
 PROJECT := ${project}
 
