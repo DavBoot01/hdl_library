@@ -1,0 +1,54 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sat Aug 20 17:43:32 2022
+[*]
+[dumpfile] "/home/davide/hdl_library/serial2parallel/simulation/serial2parallel_tb.vcd"
+[dumpfile_mtime] "Sat Aug 20 17:43:26 2022"
+[dumpfile_size] 1926
+[savefile] "/home/davide/hdl_library/serial2parallel/simulation/serial2parallel_tb.gtkw"
+[timestart] 0
+[size] 2552 1362
+[pos] 4343 0
+*-45.000000 40000000000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] serial2parallel_tb.
+[sst_width] 207
+[signals_width] 394
+[sst_expanded] 1
+[sst_vpaned_height] 420
+@200
+-Control Signals
+@29
+[color] 1
+serial2parallel_tb.nreset
+@28
+[color] 1
+serial2parallel_tb.enable
+@200
+-Data I/O
+@28
+[color] 2
+serial2parallel_tb.d_in
+[color] 7
+serial2parallel_tb.start_rec
+[color] 7
+serial2parallel_tb.ready
+[color] 7
+serial2parallel_tb.old_data
+@22
+[color] 2
+serial2parallel_tb.d_out[7:0]
+@200
+-UUT Internal Signals
+@420
+serial2parallel_tb.uut.cntr_width
+@28
+serial2parallel_tb.uut.nreset
+serial2parallel_tb.uut.da_en
+serial2parallel_tb.uut.data_in
+serial2parallel_tb.uut.dready
+serial2parallel_tb.uut.dstartrec
+serial2parallel_tb.uut.old_data
+@22
+serial2parallel_tb.uut.data_out[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

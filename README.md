@@ -72,9 +72,11 @@ Project List
 -------------------------------------------------------------------------------
 <br/>
 
-|                                               IP | Description                               |
-| -----------------------------------------------: | :---------------------------------------- |
-| [**parallel2serial**](parallel2serial/README.md) | Synchronous/Asynchronous data serializer. |
+|                                               IP | Description                                     |
+| -----------------------------------------------: | :---------------------------------------------- |
+| [**parallel2serial**](parallel2serial/README.md) | Synchronous/Asynchronous data serializer.       |
+| [**serial2parallel**](serial2parallel/README.md) | Parallelization of a single stream line of bit. |
+
 
 <br/>
 

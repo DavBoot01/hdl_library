@@ -4,6 +4,7 @@
 
 PROJECT_LIST= \
 parallel2serial \
+serial2parallel \
 
 PROJECT := ${project}
 
