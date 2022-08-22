@@ -10,7 +10,7 @@ SIMULATION := ${simulation}
 #GHDL CONFIG
 GHDL := ghdl-llvm
 GHDL_FLAGS :=
-GHDL_OPTS := --std=08 --work=parallel2serial --workdir=simulation
+GHDL_OPTS := --std=08 --work=hdl_project --workdir=simulation
 
 #SIMULATION OPTIONS
 WAVEFORM_VIEWER := gtkwave
