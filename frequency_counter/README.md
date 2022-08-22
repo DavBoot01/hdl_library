@@ -92,10 +92,10 @@ The simulation parameters are (see description session for the parameters' namin
 
 So the aspected values are:
 
-|   Parameter |    Value    |
-| ----------: | :---------: |
-| **quantum** |    10us     |
-|  **n_edge** | 200 (0x7D0) |
+|   Parameter |    Value     |
+| ----------: | :----------: |
+| **quantum** |     10us     |
+|  **n_edge** | 2000 (0x7D0) |
 
 <br/>
 
