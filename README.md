@@ -72,11 +72,12 @@ Project List
 -------------------------------------------------------------------------------
 <br/>
 
-|                                               IP | Description                                     |
-| -----------------------------------------------: | :---------------------------------------------- |
-| [**parallel2serial**](parallel2serial/README.md) | Synchronous/Asynchronous data serializer.       |
-| [**serial2parallel**](serial2parallel/README.md) | Parallelization of a single stream line of bit. |
-|   [**clk_2N_divider**](clk_2N_divider/README.md) | Clock frequency divider (2N divider)            |
+|                                                   IP | Description                                     |
+| ---------------------------------------------------: | :---------------------------------------------- |
+|     [**parallel2serial**](parallel2serial/README.md) | Synchronous/Asynchronous data serializer.       |
+|     [**serial2parallel**](serial2parallel/README.md) | Parallelization of a single stream line of bit. |
+|       [**clk_2N_divider**](clk_2N_divider/README.md) | Clock frequency divider (2N divider).           |
+| [**frequency_counter**](frequency_counter/README.md) | Digital clock frequency counter.                |
 
 
 

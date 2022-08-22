@@ -1,0 +1,52 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sun Aug 21 20:09:33 2022
+[*]
+[dumpfile] "/home/davide/hdl_library/frequency_counter/simulation/frequency_counter_tb.vcd"
+[dumpfile_mtime] "Sun Aug 21 20:09:22 2022"
+[dumpfile_size] 1250373
+[savefile] "/home/davide/hdl_library/frequency_counter/simulation/frequency_counter_tb.gtkw"
+[timestart] 0
+[size] 2560 1362
+[pos] -1 -1
+*-44.000000 1832300000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] frequency_counter_tb.
+[sst_width] 207
+[signals_width] 341
+[sst_expanded] 1
+[sst_vpaned_height] 420
+@200
+-Control Signals
+@28
+[color] 1
+frequency_counter_tb.enable
+[color] 1
+frequency_counter_tb.clk_ref
+@200
+-Data I/O
+@29
+[color] 2
+frequency_counter_tb.clk_in
+@23
+[color] 2
+frequency_counter_tb.counter[15:0]
+@29
+[color] 2
+frequency_counter_tb.evalueted
+@200
+-UUT Internal Signals
+@28
+frequency_counter_tb.uut.clk_ref
+frequency_counter_tb.uut.clk_in
+frequency_counter_tb.uut.enable
+frequency_counter_tb.uut.enable_cnt
+@22
+frequency_counter_tb.uut.counter[15:0]
+frequency_counter_tb.uut.counter_d[15:0]
+frequency_counter_tb.uut.counter_u[15:0]
+frequency_counter_tb.uut.cout[15:0]
+@28
+frequency_counter_tb.uut.eval
+frequency_counter_tb.uut.evaluated
+[pattern_trace] 1
+[pattern_trace] 0
