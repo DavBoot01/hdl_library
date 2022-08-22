@@ -61,7 +61,7 @@ end parallel2serial;
 
 <br/>
 
-Testbanch and Simulation
+Testbench and Simulation
 -------------------------------------------------------------------------------
 
 <br/>

@@ -56,7 +56,7 @@ end clk_2N_divider;
 
 <br/>
 
-Testbanch and Simulation
+Testbench and Simulation
 -------------------------------------------------------------------------------
 <br/>
 

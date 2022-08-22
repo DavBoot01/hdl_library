@@ -5,7 +5,7 @@ HDL Library
 
 Description
 -------------------------------------------------------------------------------
-This is a collection of IPs written in HDL. Each IP is managed independently with own testbanch and simulation file. <br/>
+This is a collection of IPs written in HDL. Each IP is managed independently with own testbench and simulation file. <br/>
 This wants to be library ables also to make easy to simulate the code. For this purpose, the GHDL tool is use. <br/>
 <br/>
 For each references about GHDL see at tail of this document.
