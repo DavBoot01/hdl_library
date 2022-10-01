@@ -24,7 +24,7 @@ list_prj:
 
 
 cleanall:
-	@for i in $(PROJECT_LIST); do \
+	@for i in rtl/$(PROJECT_LIST); do \
 		make -C $${i} -f Makefile clean ; \
 	done
 
@@ -34,5 +34,5 @@ ifeq ($(findstring $(PROJECT),$(PROJECT_LIST)),)
 	@echo "ERROR: project $(PROJECT) does not exist"
 else
 	@echo "*** Task $@ on project $(PROJECT) ***"
-	@make -C $(PROJECT) -f Makefile $@
+	@make -C rtl/$(PROJECT) -f Makefile $@
 endif
