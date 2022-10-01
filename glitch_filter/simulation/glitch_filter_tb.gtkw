@@ -1,0 +1,42 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Fri Sep 30 14:31:34 2022
+[*]
+[dumpfile] "/home/davide/hdl_library/glitch_filter/simulation/glitch_filter_tb.vcd"
+[dumpfile_mtime] "Fri Sep 30 14:30:17 2022"
+[dumpfile_size] 18957
+[savefile] "/home/davide/hdl_library/glitch_filter/simulation/glitch_filter_tb.gtkw"
+[timestart] 22600000000
+[size] 2552 1362
+[pos] -1 -1
+*-37.000000 720000000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] glitch_filter_tb.
+[sst_width] 207
+[signals_width] 286
+[sst_expanded] 1
+[sst_vpaned_height] 420
+@200
+-Control Signals
+@29
+[color] 2
+glitch_filter_tb.clk
+[color] 2
+glitch_filter_tb.nreset
+@200
+-Data I/O
+@28
+[color] 7
+glitch_filter_tb.signal_i
+[color] 7
+glitch_filter_tb.signal_o
+@200
+-UUT Internal Signals
+@28
+glitch_filter_tb.uut.clk
+glitch_filter_tb.uut.nreset
+glitch_filter_tb.uut.signal_i
+glitch_filter_tb.uut.filtered
+glitch_filter_tb.uut.samples[2:0]
+glitch_filter_tb.uut.signal_o
+[pattern_trace] 1
+[pattern_trace] 0

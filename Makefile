@@ -7,6 +7,7 @@ parallel2serial \
 serial2parallel \
 clk_2N_divider \
 frequency_counter \
+glitch_filter \
 
 PROJECT := ${project}
 
