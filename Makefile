@@ -29,7 +29,7 @@ cleanall:
 	done
 
 
-list compile run view clean:
+list compile run view clean show_dependencies:
 ifeq ($(findstring $(PROJECT),$(PROJECT_LIST)),)
 	@echo "ERROR: project $(PROJECT) does not exist"
 else

@@ -23,11 +23,18 @@ mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 ROOT_DIR := $(patsubst %/,%,$(dir $(mkfile_path)))
 PROJECT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
+DIPENDENCE_PROJECTS := 
+# Include dependency makefile. It should polupate DIPENDENCE_PROJECTS
+# variable. The '-' near include allows to not get an error if the include
+# file does not exist
+-include $(PROJECT_DIR)/dependency.mk
+
 project_src_folder := 
 SOURCE_FILES :=
 
 #TARGET FILE
-project_src_folder := $(PROJECT_DIR)/$(SOURCEDIR)
+project_src_folder := $(foreach dep, $(DIPENDENCE_PROJECTS), $(ROOT_DIR)/$(RTLDIR)/$(dep)/$(SOURCEDIR))
+project_src_folder += $(PROJECT_DIR)/$(SOURCEDIR)
 
 SOURCE_FILES := $(foreach dir, $(project_src_folder), $(wildcard $(dir)/*.$(VHDLEX)))
 OBJ_SOURCE := $(patsubst %, $(PROJECT_DIR)/$(SIMDIR)/%, $(notdir $(SOURCE_FILES:.$(VHDLEX)=.o)))
@@ -93,14 +100,6 @@ compile: analysis_sources analysis_testbenches elaborate_testbench
 	done
 	@echo
 
-list: 
-	@echo "******************************"
-	@echo "List of executable simulation:"
-	@for i in $(EXEC_TEST); do \
-		echo " - $${i##*/}"; \
-	done
-	@echo "******************************"
-
 
 run: compile
 ifeq ($(SIMULATION),)
@@ -117,6 +116,7 @@ endif
 endif
 endif
 
+
 view: run
 ifneq ("$(wildcard simulation/$(SIMULATION).gtkw)","")
 	@echo "gtkw file for this vcd simulation, it will be used."
@@ -125,6 +125,28 @@ else
 	@echo "No gtkw file found for this vcd simulation."
 	@$(WAVEFORM_VIEWER) simulation/$(SIMULATION).vcd
 endif
+
+
+list: 
+	@echo
+	@echo "******************************"
+	@echo "List of executable simulation:"
+	@for i in $(EXEC_TEST); do \
+		echo " - $${i##*/}"; \
+	done
+	@echo "******************************"
+	@echo
+
+
+show_dependencies:
+	@echo
+	@echo "******************************"
+	@echo "List dependencies:"
+	@for i in $(DIPENDENCE_PROJECTS); do \
+		echo " - $${i##*/}"; \
+	done
+	@echo "******************************"
+	@echo
 
 
 clean:
