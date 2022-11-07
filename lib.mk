@@ -1,7 +1,8 @@
 VHDLEX = vhd
 
+RTLDIR := rtl
 SOURCEDIR := source
-TESTDIR := testbench
+TBDIR := testbench
 SIMDIR := simulation
 
 #ARGUMENTS
@@ -18,22 +19,52 @@ GHDL_SIM_POTS = --vcd=simulation/$(SIMULATION).vcd $(shell cat simulation/sim_op
 grep $(SIMULATION) | \
 awk -F ':' '{print $$2}' )
 
+mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
+ROOT_DIR := $(patsubst %/,%,$(dir $(mkfile_path)))
+PROJECT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+
+project_src_folder := 
+SOURCE_FILES :=
 
 #TARGET FILE
-SOURCE_FILES := $(wildcard $(SOURCEDIR)/*.$(VHDLEX))
-OBJ_SOURCE := $(patsubst $(SOURCEDIR)/%.$(VHDLEX), $(SIMDIR)/%.o, $(SOURCE_FILES))
+project_src_folder := $(PROJECT_DIR)/$(SOURCEDIR)
 
-TEST_FILES := $(wildcard $(TESTDIR)/*.$(VHDLEX))
-OBJ_TEST := $(patsubst $(TESTDIR)/%.$(VHDLEX), $(SIMDIR)/%.o, $(TEST_FILES))
-EXEC_TEST := $(OBJ_TEST:%.o=%)
+SOURCE_FILES := $(foreach dir, $(project_src_folder), $(wildcard $(dir)/*.$(VHDLEX)))
+OBJ_SOURCE := $(patsubst %, $(PROJECT_DIR)/$(SIMDIR)/%, $(notdir $(SOURCE_FILES:.$(VHDLEX)=.o)))
+
+TB_FILES := $(wildcard $(PROJECT_DIR)/$(TBDIR)/*.$(VHDLEX))
+OBJ_TB := $(patsubst %, $(PROJECT_DIR)/$(SIMDIR)/%, $(notdir $(TB_FILES:.$(VHDLEX)=.o)))
+
+EXEC_TEST := $(OBJ_TB:%.o=%)
+
+
+# Define the function that will generate each rule
+# Used to anlyzing step
+define generateAnalyzingRules
+$(PROJECT_DIR)/$(SIMDIR)/$(notdir $(1:.$(VHDLEX)=.o)): $(1)
+	@echo " - Analyzing of $$@ from $$<"
+	@$(GHDL) -a $(GHDL_FLAGS) $(GHDL_OPTS) $$<
+endef
+
+
+# Define the function that will generate each rule
+# Used to elaboration step
+define generateElaborationRules
+$(PROJECT_DIR)/$(SIMDIR)/$(notdir $(1:.o=)): $(1)
+	@echo " - Elaboration of $$@"
+	@$(GHDL) -e $(GHDL_FLAGS) $(GHDL_OPTS) -o $$@ $$(notdir $$@)
+endef
 
 
 .PHONY: clean compile analysis_sources analysis_testbenches \
 elaborate_testbench list run
 
-$(SIMDIR)/%.o: $(SOURCEDIR)/%.$(VHDLEX)
-	@echo "Analyze of $@"
-	@$(GHDL) -a $(GHDL_FLAGS) $(GHDL_OPTS) $<
+
+# Generate rules
+$(foreach obj, $(SOURCE_FILES), $(eval $(call generateAnalyzingRules, $(obj))))
+$(foreach obj, $(TB_FILES), $(eval $(call generateAnalyzingRules, $(obj))))
+$(foreach obj, $(OBJ_TB), $(eval $(call generateElaborationRules, $(obj))))
+
 
 analysis_sources: $(OBJ_SOURCE)
 	@echo
@@ -41,19 +72,11 @@ analysis_sources: $(OBJ_SOURCE)
 	@echo
 
 
-$(SIMDIR)/%.o: $(TESTDIR)/%.$(VHDLEX)
-	@echo "Analyze of $@"
-	@$(GHDL) -a $(GHDL_FLAGS) $(GHDL_OPTS) $<
-
-analysis_testbenches: $(OBJ_TEST)
+analysis_testbenches: $(OBJ_TB)
 	@echo
 	@echo "========== Analysis of Testbench(s) source code complete =========="
 	@echo
 
-
-$(SIMDIR)/%: $(SIMDIR)/%.o
-	@echo "Elaboration of $@"
-	@$(GHDL) -e $(GHDL_FLAGS) $(GHDL_OPTS) -o $@ $(notdir $@)
 
 elaborate_testbench: $(EXEC_TEST)
 	@echo

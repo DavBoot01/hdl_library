@@ -25,7 +25,7 @@ list_prj:
 
 cleanall:
 	@for i in rtl/$(PROJECT_LIST); do \
-		make -C $${i} -f Makefile clean ; \
+		make -C rtl/$${i} -f Makefile clean ; \
 	done
 
 
