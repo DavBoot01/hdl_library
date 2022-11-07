@@ -36,6 +36,9 @@ $(SIMDIR)/%.o: $(SOURCEDIR)/%.$(VHDLEX)
 	@$(GHDL) -a $(GHDL_FLAGS) $(GHDL_OPTS) $<
 
 analysis_sources: $(OBJ_SOURCE)
+	@echo
+	@echo "========== Analysis of IP(s) source code complete =========="
+	@echo
 
 
 $(SIMDIR)/%.o: $(TESTDIR)/%.$(VHDLEX)
@@ -43,6 +46,9 @@ $(SIMDIR)/%.o: $(TESTDIR)/%.$(VHDLEX)
 	@$(GHDL) -a $(GHDL_FLAGS) $(GHDL_OPTS) $<
 
 analysis_testbenches: $(OBJ_TEST)
+	@echo
+	@echo "========== Analysis of Testbench(s) source code complete =========="
+	@echo
 
 
 $(SIMDIR)/%: $(SIMDIR)/%.o
@@ -50,11 +56,19 @@ $(SIMDIR)/%: $(SIMDIR)/%.o
 	@$(GHDL) -e $(GHDL_FLAGS) $(GHDL_OPTS) -o $@ $(notdir $@)
 
 elaborate_testbench: $(EXEC_TEST)
-
+	@echo
+	@echo "========== Elaboration complete =========="
+	@echo
 
 compile: analysis_sources analysis_testbenches elaborate_testbench
-	@echo "compilation"
-
+	@echo
+	@echo "========== Compilation complete =========="
+	@echo
+	@echo "List of executable simulation:"
+	@for i in $(EXEC_TEST); do \
+		echo " - $${i##*/}"; \
+	done
+	@echo
 
 list: 
 	@echo "******************************"
